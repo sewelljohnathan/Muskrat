@@ -128,7 +128,7 @@ class Counting(commands.Cog):
             if member == ctx.author:
                 author_listed = True
             
-            if i > 10 or author_listed == False:
+            if i < 10 or author_listed == False:
 
                 name = member.nick or member.name
                 score = score_pair['counted']
