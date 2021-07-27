@@ -122,7 +122,7 @@ class Counting(commands.Cog):
         # Get top ten
         top_ten = ''
         author_listed = False
-        for i, score_pair in score_pairs:
+        for i, score_pair in enumerate(score_pairs):
             
             member = discord.utils.get(guild.members, id=score_pair['member_id'])
             if member == ctx.author:
