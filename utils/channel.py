@@ -8,10 +8,10 @@ from typing import Union
 from utils.database import log_to_database
 
 
-async def delete_channel(channel: Union[VoiceChannel, TextChannel], *, reason=None) -> None:
+async def delete_channel(channel: Union[VoiceChannel, TextChannel]) -> None:
     """Wrapper for discord.py channel.delete()"""
     try:
-        await channel.delete(reason)
+        await channel.delete()
     except Forbidden as e:
         log_to_database(channel.guild, f'[{e.status} {e.response.reason}] Did not have permission to delete a channel.')
     except NotFound as e:
