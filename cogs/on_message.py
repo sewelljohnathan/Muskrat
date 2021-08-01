@@ -13,13 +13,13 @@ class OnMessage(commands.Cog):
     async def on_message(self, message):
         """Filter messages."""
         if message.channel.name == 'around-the-world':
-            self.around_the_world(message)
+            await self.around_the_world(message)
         
         elif message.channel.name == 'counting':
-            self.counting(message)
+            await self.counting(message)
 
         else:
-            self.banned_words(message)
+            await self.banned_words(message)
         
     async def around_the_world(self, message):
         """Filter messages in #around-the-world."""
