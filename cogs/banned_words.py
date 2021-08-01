@@ -2,7 +2,7 @@ import discord
 
 from discord.ext import commands
 from utils.database import get_guild_data, update_database_guild
-from utils.message import delete_message, send_message
+from utils.message import send_message
 
 
 class BannedWords(commands.Cog):

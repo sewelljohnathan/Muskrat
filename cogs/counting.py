@@ -1,8 +1,7 @@
 import discord
 
 from discord.ext import commands
-from discord.errors import Forbidden, HTTPException
-from utils.database import add_database_member, get_guild_data, log_to_database, update_database_guild
+from utils.database import get_guild_data, update_database_guild
 from utils.message import delete_message, get_message, send_message
 
 
