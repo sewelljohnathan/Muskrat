@@ -91,6 +91,7 @@ def main():
     bot.load_extension('cogs.logs')
     bot.load_extension('cogs.member_leave')
     bot.load_extension('cogs.member_welcome')
+    bot.load_extension('cogs.on_message')
     bot.load_extension('cogs.private_vc')
     bot.load_extension('cogs.reaction_role')
 

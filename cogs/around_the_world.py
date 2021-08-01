@@ -20,15 +20,6 @@ class AroundTheWorld(commands.Cog):
             await self.subcommands[command](ctx, args)
 
     @commands.Cog.listener()
-    async def on_message(self, message):
-        """Filter messages."""
-        if message.channel.name != 'around-the-world':
-            return
-
-        if message.content.lower() != 'around the world':
-            await delete_message(message)
-
-    @commands.Cog.listener()
     async def on_raw_message_edit(self, payload):
         """Prevent editing."""
         channel = self.bot.get_channel(payload.channel_id)

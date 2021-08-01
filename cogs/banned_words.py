@@ -24,25 +24,6 @@ class BannedWords(commands.Cog):
         if command in self.subcommands:
             await self.subcommands[command](ctx, args)
 
-    @commands.Cog.listener()
-    async def on_message(self, message):
-        """Deletes a message if it contains a banned word."""
-        guild = message.guild
-        # This allows the bot to list the banned words, or mods to use them in commands
-        if message.author.guild_permissions.manage_messages:
-            return
-
-        # Get the guild data from the database
-        guild_data = get_guild_data(guild)
-        if guild_data is None:
-            return
-
-        # Delete the message if it contains a banned word
-        for word in guild_data['banned_words']:
-            if word.lower() in message.content.lower():
-                await delete_message(message)
-                return
-
     @staticmethod
     async def add(ctx, args):
         """Adds a banned word to the database."""
