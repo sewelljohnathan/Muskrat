@@ -32,6 +32,7 @@ class OnMessage(commands.Cog):
     async def banned_words(self, message):
         """Deletes a message if it contains a banned word."""
         guild = message.guild
+        
         # This allows the bot to list the banned words, or mods to use them in commands
         if message.author.guild_permissions.manage_messages:
             return
