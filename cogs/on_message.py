@@ -93,7 +93,6 @@ class OnMessage(commands.Cog):
             return
         
         # Get the current count
-        database_author = None
         member_data = guild_data['member_data']
         for member in member_data:
             if member['member_id'] == message.author.id:
